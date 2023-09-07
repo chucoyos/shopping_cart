@@ -8,7 +8,7 @@ function App() {
 		<>
 			<Container>
 				<h1>Shopping Cart</h1>
-				<Button variant='contained'>Hello World</Button>
+				<Button variant='contained'>Click Me</Button>
 				<Typography variant='body1'>Hello World</Typography>
 			</Container>
 		</>
