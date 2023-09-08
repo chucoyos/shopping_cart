@@ -2,9 +2,10 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-
 import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
+import Badge from '@mui/material/Badge'
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 
 export default function AccountMenu() {
 	const [anchorEl, setAnchorEl] = React.useState(null)
@@ -23,6 +24,7 @@ export default function AccountMenu() {
 					alignItems: 'center',
 					justifyContent: 'center',
 					textAlign: 'center',
+					padding: '16px 0',
 				}}
 			>
 				<Typography sx={{ minWidth: 100 }}>Contact</Typography>
@@ -39,6 +41,12 @@ export default function AccountMenu() {
 						Categories
 					</Typography>
 				</Tooltip>
+				<Badge
+					badgeContent={1}
+					color='primary'
+				>
+					<ShoppingCartOutlinedIcon sx={{ ml: 2 }} />
+				</Badge>
 			</Box>
 			<Menu
 				anchorEl={anchorEl}
