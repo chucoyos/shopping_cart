@@ -1,4 +1,4 @@
-import Nav from './components/nav'
+import Nav from './components/Nav'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const Router = () => {
