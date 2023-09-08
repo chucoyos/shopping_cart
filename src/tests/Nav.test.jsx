@@ -6,6 +6,6 @@ import Nav from '../components/Nav'
 describe('App', () => {
 	it('renders App component', () => {
 		render(<Nav />)
-		expect(screen.getByText('Hello World')).toBeInTheDocument()
+		expect(screen.getByText('Categories')).toBeInTheDocument()
 	})
 })
