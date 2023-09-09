@@ -6,8 +6,15 @@ import Typography from '@mui/material/Typography'
 import Tooltip from '@mui/material/Tooltip'
 import Badge from '@mui/material/Badge'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import useFetch from '../useFetch'
 
 export default function Nav() {
+	const { data, loading, error } = useFetch(
+		'https://fakestoreapi.com/products/'
+	)
+	data && console.log(data)
+	loading && console.log('loading...')
+	error && console.log(error)
 	const [anchorEl, setAnchorEl] = React.useState(null)
 	const open = Boolean(anchorEl)
 	const handleClick = (event) => {
