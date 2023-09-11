@@ -1,6 +1,5 @@
 import useFetch from '../useFetch'
 import { useOutletContext } from 'react-router-dom'
-/* eslint-disable react/prop-types */
 const Products = () => {
 	const [url] = useOutletContext()
 	const { data, loading, error } = useFetch(url)
@@ -16,4 +15,5 @@ const Products = () => {
 		</div>
 	)
 }
+
 export default Products
