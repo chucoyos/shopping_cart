@@ -7,6 +7,7 @@ import Tooltip from '@mui/material/Tooltip'
 import Badge from '@mui/material/Badge'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import useFetch from '../useFetch'
+import { Outlet } from 'react-router-dom'
 
 export default function Nav() {
 	const { data, loading, error } = useFetch(
@@ -14,7 +15,7 @@ export default function Nav() {
 	)
 	data && console.log(data)
 	loading && console.log('loading...')
-	error && console.log(error)
+	error && console.log('error message: ', error)
 	const [anchorEl, setAnchorEl] = React.useState(null)
 	const open = Boolean(anchorEl)
 	const handleClick = (event) => {
@@ -93,6 +94,7 @@ export default function Nav() {
 				<MenuItem onClick={handleClose}>Women clothing</MenuItem>
 				<MenuItem onClick={handleClose}>Close</MenuItem>
 			</Menu>
+			<Outlet />
 		</>
 	)
 }
