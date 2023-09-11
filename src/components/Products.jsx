@@ -1,5 +1,7 @@
 import useFetch from '../useFetch'
 import { useOutletContext } from 'react-router-dom'
+import Container from '@mui/material/Container'
+import Product from './Product'
 const Products = () => {
 	const [url] = useOutletContext()
 	const { data, loading, error } = useFetch(url)
@@ -7,12 +9,29 @@ const Products = () => {
 	loading && console.log('loading...')
 	error && console.log('error message: ', error)
 	return (
-		<div>
-			<h2>Products</h2>
+		<Container
+			sx={{
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'center',
+				justifyContent: 'center',
+				flexWrap: 'wrap',
+				gap: '20px',
+				backgroundColor: '#f5f5f5',
+				padding: '32px',
+				borderRadius: '8px',
+			}}
+		>
 			{loading && <h3>Loading...</h3>}
 			{error && <h3>{error}</h3>}
-			{data && data.map((product) => <h3 key={product.id}>{product.title}</h3>)}
-		</div>
+			{data &&
+				data.map((product) => (
+					<Product
+						key={product.id}
+						product={product}
+					/>
+				))}
+		</Container>
 	)
 }
 
