@@ -2,6 +2,7 @@ import useFetch from '../useFetch'
 import { useOutletContext } from 'react-router-dom'
 import Container from '@mui/material/Container'
 import Product from './Product'
+import Loading from './Loading'
 const Products = () => {
 	const [url] = useOutletContext()
 	const { data, loading, error } = useFetch(url)
@@ -22,8 +23,13 @@ const Products = () => {
 				borderRadius: '8px',
 			}}
 		>
-			{loading && <h3>Loading...</h3>}
-			{error && <h3>{error}</h3>}
+			{loading && (
+				<>
+					<Loading />
+					<Loading />
+				</>
+			)}
+			{error && <h1>{error}</h1>}
 			{data &&
 				data.map((product) => (
 					<Product
