@@ -7,7 +7,7 @@ import Tooltip from '@mui/material/Tooltip'
 import Badge from '@mui/material/Badge'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export default function Nav() {
 	const [url, setUrl] = useState('https://fakestoreapi.com/products/')
@@ -91,7 +91,12 @@ export default function Nav() {
 						})
 					}
 				>
-					Electronics
+					<Link
+						to='/'
+						style={{ textDecoration: 'none', color: 'inherit' }}
+					>
+						Electronics
+					</Link>
 				</MenuItem>
 				<MenuItem
 					onClick={
@@ -101,7 +106,12 @@ export default function Nav() {
 						})
 					}
 				>
-					Jewelry
+					<Link
+						to='/'
+						style={{ textDecoration: 'none', color: 'inherit' }}
+					>
+						Jewelry
+					</Link>
 				</MenuItem>
 				<MenuItem
 					onClick={
@@ -113,7 +123,12 @@ export default function Nav() {
 						})
 					}
 				>
-					Men clothing
+					<Link
+						to='/'
+						style={{ textDecoration: 'none', color: 'inherit' }}
+					>
+						Men clothing
+					</Link>
 				</MenuItem>
 				<MenuItem
 					onClick={
@@ -125,7 +140,12 @@ export default function Nav() {
 						})
 					}
 				>
-					Women clothing
+					<Link
+						to='/'
+						style={{ textDecoration: 'none', color: 'inherit' }}
+					>
+						Women clothing
+					</Link>
 				</MenuItem>
 				<MenuItem onClick={handleClose}>Close</MenuItem>
 			</Menu>
