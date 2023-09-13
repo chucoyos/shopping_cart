@@ -18,7 +18,6 @@ export default function Nav() {
 	}
 	const handleClose = () => {
 		setAnchorEl(null)
-		setUrl('https://fakestoreapi.com/products/category/jewelery')
 	}
 	return (
 		<>
@@ -84,10 +83,50 @@ export default function Nav() {
 					},
 				}}
 			>
-				<MenuItem onClick={handleClose}>Electronics</MenuItem>
-				<MenuItem onClick={handleClose}>Jewelry</MenuItem>
-				<MenuItem onClick={handleClose}>Men clothing</MenuItem>
-				<MenuItem onClick={handleClose}>Women clothing</MenuItem>
+				<MenuItem
+					onClick={
+						handleClose &&
+						(() => {
+							setUrl('https://fakestoreapi.com/products/category/electronics')
+						})
+					}
+				>
+					Electronics
+				</MenuItem>
+				<MenuItem
+					onClick={
+						handleClose &&
+						(() => {
+							setUrl('https://fakestoreapi.com/products/category/jewelery')
+						})
+					}
+				>
+					Jewelry
+				</MenuItem>
+				<MenuItem
+					onClick={
+						handleClose &&
+						(() => {
+							setUrl(
+								"https://fakestoreapi.com/products/category/men's clothing"
+							)
+						})
+					}
+				>
+					Men clothing
+				</MenuItem>
+				<MenuItem
+					onClick={
+						handleClose &&
+						(() => {
+							setUrl(
+								"https://fakestoreapi.com/products/category/women's clothing"
+							)
+						})
+					}
+				>
+					Women clothing
+				</MenuItem>
 				<MenuItem onClick={handleClose}>Close</MenuItem>
 			</Menu>
 			<Outlet context={[url]} />
