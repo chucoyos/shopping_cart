@@ -50,6 +50,7 @@ const ShowProduct = () => {
 						sx={{
 							alignSelf: 'center',
 							width: '100%',
+							color: '#6750A4',
 						}}
 					>
 						{product.title}
@@ -69,6 +70,8 @@ const ShowProduct = () => {
 							gap: '16px',
 							borderRadius: '8px',
 							padding: '16px',
+							backgroundColor: '#EADDFF',
+							color: '#21005D',
 						}}
 					>
 						<Typography
