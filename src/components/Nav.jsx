@@ -8,7 +8,6 @@ import Badge from '@mui/material/Badge'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { SettingsInputAntenna } from '@mui/icons-material'
 
 export default function Nav() {
 	const [url, setUrl] = useState('https://fakestoreapi.com/products/')
@@ -49,7 +48,6 @@ export default function Nav() {
 						Amazing Store
 					</Link>
 				</Typography>
-				<Typography sx={{ minWidth: 100 }}>Profile</Typography>
 				<Tooltip title='Categories'>
 					<Typography
 						onMouseOver={handleClick}
