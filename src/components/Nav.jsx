@@ -12,7 +12,7 @@ import { Link, Outlet } from 'react-router-dom'
 export default function Nav() {
 	const [url, setUrl] = useState('https://fakestoreapi.com/products/')
 	const [cart, setCart] = useState([{ id: 1, title: 'test', price: 10 }])
-	const obj = { url, cart, setCart }
+	const context = { url, cart, setCart }
 	const [anchorEl, setAnchorEl] = React.useState(null)
 	const open = Boolean(anchorEl)
 	const handleClick = (event) => {
@@ -64,7 +64,7 @@ export default function Nav() {
 					</Typography>
 				</Tooltip>
 				<Badge
-					badgeContent={obj.cart.length}
+					badgeContent={context.cart.length}
 					color='primary'
 				>
 					<ShoppingCartOutlinedIcon sx={{ ml: 2 }} />
@@ -168,7 +168,7 @@ export default function Nav() {
 				</MenuItem>
 				<MenuItem onClick={handleClose}>Close</MenuItem>
 			</Menu>
-			<Outlet context={[obj]} />
+			<Outlet context={[context]} />
 		</>
 	)
 }

@@ -13,7 +13,7 @@ import { useState } from 'react'
 
 const ShowProduct = () => {
 	const [like, setLike] = useState(false)
-	const [obj] = useOutletContext()
+	const [{ cart, setCart }] = useOutletContext()
 	const handleLike = () => {
 		setLike(!like)
 	}
@@ -176,8 +176,8 @@ const ShowProduct = () => {
 								<Button
 									variant='contained'
 									onClick={() => {
-										obj.setCart([...obj.cart, product])
-										console.log(obj.cart)
+										setCart([...cart, product])
+										console.log(cart)
 									}}
 								>
 									Add to Cart
