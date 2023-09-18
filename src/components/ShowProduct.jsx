@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import useFetch from '../useFetch'
 import Loading from './Loading'
 import Typography from '@mui/material/Typography'
@@ -8,11 +7,13 @@ import Rating from '@mui/material/Rating'
 import Button from '@mui/material/Button'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone'
+import { useOutletContext } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 
 const ShowProduct = () => {
 	const [like, setLike] = useState(false)
+	const [obj] = useOutletContext()
 	const handleLike = () => {
 		setLike(!like)
 	}
@@ -172,7 +173,15 @@ const ShowProduct = () => {
 								</Box>
 							</Box>
 							<Box>
-								<Button variant='contained'>Add to Cart</Button>
+								<Button
+									variant='contained'
+									onClick={() => {
+										obj.setCart([...obj.cart, product])
+										console.log(obj.cart)
+									}}
+								>
+									Add to Cart
+								</Button>
 							</Box>
 						</Box>
 					</Box>
@@ -181,7 +190,5 @@ const ShowProduct = () => {
 		</Container>
 	)
 }
-ShowProduct.propTypes = {
-	product: PropTypes.object,
-}
+
 export default ShowProduct
