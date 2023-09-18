@@ -6,9 +6,16 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Button from '@mui/material/Button'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone'
 import { useParams } from 'react-router-dom'
+import { useState } from 'react'
 
 const ShowProduct = () => {
+	const [like, setLike] = useState(false)
+	const handleLike = () => {
+		setLike(!like)
+	}
 	let { id } = useParams()
 	const {
 		data: product,
@@ -43,18 +50,43 @@ const ShowProduct = () => {
 						},
 					}}
 				>
-					<Typography
-						variant='h5'
-						component={'h1'}
-						mb={4}
+					<Box
 						sx={{
-							alignSelf: 'center',
-							width: '100%',
-							color: '#6750A4',
+							display: 'flex',
+							gap: '16px',
 						}}
 					>
-						{product.title}
-					</Typography>
+						<Typography
+							variant='h5'
+							component={'h1'}
+							mb={4}
+							sx={{
+								alignSelf: 'center',
+								width: '100%',
+								color: '#6750A4',
+							}}
+						>
+							{product.title}
+						</Typography>
+						<span
+							onClick={handleLike}
+							style={{ marginTop: '6px' }}
+						>
+							{like ? (
+								<FavoriteTwoToneIcon
+									sx={{
+										color: '#6750A4',
+									}}
+								/>
+							) : (
+								<FavoriteBorderIcon
+									sx={{
+										color: '#6750A4',
+									}}
+								/>
+							)}
+						</span>
+					</Box>
 					<img
 						src={product.image}
 						alt={product.title}

@@ -6,9 +6,9 @@ import Loading from './Loading'
 const Products = () => {
 	const [url] = useOutletContext()
 	const { data, loading, error } = useFetch(url)
-	data && console.log(data)
-	loading && console.log('loading...')
-	error && console.log('error message: ', error)
+	// data && console.log(data)
+	// loading && console.log('loading...')
+	// error && console.log('error message: ', error)
 	return (
 		<Container
 			sx={{
