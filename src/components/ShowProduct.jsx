@@ -8,11 +8,12 @@ import Button from '@mui/material/Button'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone'
 import { useOutletContext } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 
 const ShowProduct = () => {
 	const [like, setLike] = useState(false)
+	const [isAdded, setIsAdded] = useState(false)
 	const [{ cart, setCart }] = useOutletContext()
 	const handleLike = () => {
 		setLike(!like)
@@ -173,15 +174,26 @@ const ShowProduct = () => {
 								</Box>
 							</Box>
 							<Box>
-								<Button
-									variant='contained'
-									onClick={() => {
-										setCart([...cart, product])
-										console.log(cart)
-									}}
-								>
-									Add to Cart
-								</Button>
+								{!isAdded ? (
+									<Button
+										variant='contained'
+										onClick={() => {
+											setCart([...cart, product])
+											setIsAdded(true)
+											console.log(cart)
+										}}
+									>
+										Add to Cart
+									</Button>
+								) : (
+									<Link
+										to='/'
+										variant='contained'
+										disabled
+									>
+										View Cart
+									</Link>
+								)}
 							</Box>
 						</Box>
 					</Box>
