@@ -5,6 +5,7 @@ import Container from '@mui/material/Container'
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating'
 import Button from '@mui/material/Button'
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone'
 import { useOutletContext } from 'react-router-dom'
@@ -186,13 +187,21 @@ const ShowProduct = () => {
 										Add to Cart
 									</Button>
 								) : (
-									<Link
-										to='/'
+									<Button
 										variant='contained'
-										disabled
+										endIcon={<ShoppingCartCheckoutIcon />}
 									>
-										View Cart
-									</Link>
+										<Link
+											to='/'
+											disabled
+											style={{
+												textDecoration: 'none',
+												color: 'inherit',
+											}}
+										>
+											View Cart
+										</Link>
+									</Button>
 								)}
 							</Box>
 						</Box>
