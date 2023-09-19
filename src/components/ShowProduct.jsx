@@ -192,7 +192,7 @@ const ShowProduct = () => {
 										endIcon={<ShoppingCartCheckoutIcon />}
 									>
 										<Link
-											to='/'
+											to='/cart'
 											disabled
 											style={{
 												textDecoration: 'none',

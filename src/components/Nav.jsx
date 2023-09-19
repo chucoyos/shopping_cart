@@ -67,7 +67,12 @@ export default function Nav() {
 					badgeContent={context.cart.length}
 					color='primary'
 				>
-					<ShoppingCartOutlinedIcon sx={{ ml: 2 }} />
+					<Link
+						to='/cart'
+						style={{ textDecoration: 'none' }}
+					>
+						<ShoppingCartOutlinedIcon sx={{ ml: 2 }} />
+					</Link>
 				</Badge>
 			</Box>
 			<Menu
