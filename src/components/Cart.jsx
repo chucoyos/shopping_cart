@@ -88,6 +88,9 @@ const Cart = () => {
 												sx={{ width: '80px' }}
 												value={product.quantity}
 												onChange={(e) => {
+													if (e.target.value < 1) {
+														return
+													}
 													const newCart = [...cart]
 													const index = newCart.findIndex(
 														(item) => item.id === product.id
