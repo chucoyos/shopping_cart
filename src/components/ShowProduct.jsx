@@ -121,6 +121,7 @@ const ShowProduct = () => {
 								alignItems: 'end',
 								justifyContent: 'space-between',
 								width: '100%',
+								flexWrap: 'wrap',
 							}}
 						>
 							<Box
@@ -128,6 +129,9 @@ const ShowProduct = () => {
 									display: 'flex',
 									flexDirection: 'column',
 									alignItems: 'flex-start',
+									'@media (max-width: 800px)': {
+										alignItems: 'center',
+									},
 								}}
 							>
 								<Typography variant='body1'>
@@ -154,6 +158,10 @@ const ShowProduct = () => {
 									sx={{
 										display: 'flex',
 										gap: '16px',
+										'@media (max-width: 800px)': {
+											flexDirection: 'column',
+											marginTop: '16px',
+										},
 									}}
 								>
 									<Typography
@@ -175,6 +183,27 @@ const ShowProduct = () => {
 								</Box>
 							</Box>
 							<Box>
+								<Button
+									variant='contained'
+									sx={{
+										marginRight: '8px',
+										'@media (max-width: 800px)': {
+											marginBottom: '16px',
+											marginTop: '16px',
+											marginRight: '0px',
+										},
+									}}
+								>
+									<Link
+										to='/'
+										style={{
+											textDecoration: 'none',
+											color: 'inherit',
+										}}
+									>
+										Continue shopping
+									</Link>
+								</Button>
 								{!isAdded ? (
 									<Button
 										variant='contained'
