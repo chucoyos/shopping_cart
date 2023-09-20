@@ -213,6 +213,7 @@ const ShowProduct = () => {
 											)
 
 											if (!cart.includes(cartProduct)) {
+												product.quantity = 1
 												setCart([...cart, product])
 												setIsAdded(true)
 											} else {
