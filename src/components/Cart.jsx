@@ -1,4 +1,3 @@
-import Paper from '@mui/material/Paper'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import { Link } from 'react-router-dom'
@@ -35,9 +34,14 @@ const Cart = () => {
 				<Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
 					{cart.map((product) => {
 						return (
-							<Paper
+							<Box
 								key={product.id}
-								sx={{ display: 'flex', gap: '16px', padding: '16px' }}
+								sx={{
+									display: 'flex',
+									gap: '16px',
+									padding: '16px',
+									borderBottom: '.5px solid lightgray',
+								}}
 							>
 								<img
 									style={{ width: '12%' }}
@@ -48,12 +52,26 @@ const Cart = () => {
 									sx={{
 										display: 'flex',
 										flexDirection: 'column',
+										flex: '1',
+										justifyContent: 'space-between',
 									}}
 								>
-									<h3>{product.title}</h3>
-									<p>${product.price}</p>
+									<Typography variant='h6'>{product.title}</Typography>
+									<Box
+										sx={{
+											display: 'flex',
+											justifyContent: 'space-between',
+										}}
+									>
+										<Box>
+											<Typography variant='body1'>${product.price}</Typography>
+										</Box>
+										<Box sx={{ position: 'relative' }}>
+											<Button>test</Button>
+										</Box>
+									</Box>
 								</Box>
-							</Paper>
+							</Box>
 						)
 					})}
 				</Box>
