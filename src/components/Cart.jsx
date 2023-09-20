@@ -9,6 +9,7 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium'
 import EmptyCart from './EmptyCart'
 const Cart = () => {
 	const [{ cart, setCart }] = useOutletContext()
+	const total = cart.reduce((acc, curr) => acc + curr.price, 0)
 	return (
 		<Container
 			sx={{
@@ -109,7 +110,7 @@ const Cart = () => {
 							variant='h5'
 							gutterBottom
 						>
-							Total: ${cart.reduce((acc, curr) => acc + curr.price, 0)}
+							Total: ${total.toFixed(2)}
 						</Typography>
 						<ButtonGroup
 							orientation='vertical'
