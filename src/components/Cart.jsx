@@ -15,6 +15,7 @@ const Cart = () => {
 				display: 'flex',
 				gap: '32px',
 				flexWrap: 'wrap',
+				alignItems: 'flex-start',
 				'&media (max-width: 800px)': { flexDirection: 'column', gap: '0' },
 			}}
 		>
@@ -77,19 +78,21 @@ const Cart = () => {
 				</Box>
 			</Box>
 			{cart.length > 0 && (
-				<Box>
-					<Box
-						sx={{
-							display: 'flex',
-							flexDirection: 'column',
-							'@media (max-width: 800px)': {
-								width: '100%',
-								justifyContent: 'center',
-								alignItems: 'center',
-								marginBottom: '32px',
-							},
-						}}
-					>
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						marginTop: '128px',
+						'@media (max-width: 820px)': {
+							width: '100%',
+							justifyContent: 'center',
+							alignItems: 'center',
+							marginBottom: '32px',
+							marginTop: '32px',
+						},
+					}}
+				>
+					<Box>
 						<Typography
 							variant='body1'
 							color='success.main'
