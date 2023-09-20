@@ -11,20 +11,7 @@ import { Link, Outlet } from 'react-router-dom'
 
 export default function Nav() {
 	const [url, setUrl] = useState('https://fakestoreapi.com/products/')
-	const [cart, setCart] = useState([
-		{
-			id: 1,
-			title: 'test',
-			price: 10,
-			image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-		},
-		{
-			id: 2,
-			title: 'test',
-			price: 10,
-			image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-		},
-	])
+	const [cart, setCart] = useState([])
 	const context = { url, cart, setCart }
 	const [anchorEl, setAnchorEl] = React.useState(null)
 	const open = Boolean(anchorEl)
@@ -84,7 +71,7 @@ export default function Nav() {
 						to='/cart'
 						style={{ textDecoration: 'none' }}
 					>
-						<ShoppingCartOutlinedIcon sx={{ ml: 2 }} />
+						<ShoppingCartOutlinedIcon sx={{ ml: 2, color: 'black' }} />
 					</Link>
 				</Badge>
 			</Box>
