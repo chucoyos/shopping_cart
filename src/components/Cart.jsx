@@ -117,7 +117,12 @@ const Cart = () => {
 							aria-label='vertical contained primary button group'
 							variant='contained'
 						>
-							<Button variant='contained'>
+							<Button
+								variant='contained'
+								onClick={() => {
+									setCart([])
+								}}
+							>
 								<Link
 									to='/checkout'
 									style={{ textDecoration: 'none', color: 'inherit' }}
