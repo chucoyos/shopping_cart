@@ -8,7 +8,7 @@ import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined'
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium'
 import EmptyCart from './EmptyCart'
 const Cart = () => {
-	const [{ cart }] = useOutletContext()
+	const [{ cart, setCart }] = useOutletContext()
 	return (
 		<Container
 			sx={{
@@ -68,7 +68,13 @@ const Cart = () => {
 											<Typography variant='body1'>${product.price}</Typography>
 										</Box>
 										<Box sx={{ position: 'relative' }}>
-											<Button>test</Button>
+											<Button
+												onClick={() => {
+													setCart(cart.filter((item) => item.id !== product.id))
+												}}
+											>
+												Remove
+											</Button>
 										</Box>
 									</Box>
 								</Box>
