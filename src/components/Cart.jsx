@@ -31,7 +31,7 @@ const Cart = () => {
 					'@media (max-width: 800px)': { maxWidth: '100%' },
 				}}
 			>
-				<h1>My Cart ({cart.length})</h1>
+				<Typography variant='h4'>My Cart ({cart.length})</Typography>
 				{cart.length === 0 && <EmptyCart />}
 				<Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
 					{cart.map((product) => {
@@ -89,7 +89,7 @@ const Cart = () => {
 					sx={{
 						display: 'flex',
 						flexDirection: 'column',
-						marginTop: '128px',
+						marginTop: '80px',
 						'@media (max-width: 820px)': {
 							width: '100%',
 							justifyContent: 'center',
