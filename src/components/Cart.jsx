@@ -2,14 +2,14 @@ import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import { Link } from 'react-router-dom'
 import { useOutletContext } from 'react-router-dom'
-import { Box, ButtonGroup, Typography } from '@mui/material'
+import { Box, ButtonGroup, TextField, Typography } from '@mui/material'
 import { KeyboardReturn } from '@mui/icons-material'
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined'
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium'
 import EmptyCart from './EmptyCart'
 const Cart = () => {
 	const [{ cart, setCart }] = useOutletContext()
-	const total = cart.reduce((acc, curr) => acc + curr.price, 0)
+	const total = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)
 	return (
 		<Container
 			sx={{
@@ -33,7 +33,14 @@ const Cart = () => {
 			>
 				<Typography variant='h4'>My Cart ({cart.length})</Typography>
 				{cart.length === 0 && <EmptyCart />}
-				<Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+				<Box
+					sx={{
+						display: 'flex',
+						flexDirection: 'column',
+						gap: '32px',
+						marginBottom: '32px',
+					}}
+				>
 					{cart.map((product) => {
 						return (
 							<Box
@@ -66,7 +73,29 @@ const Cart = () => {
 										}}
 									>
 										<Box>
-											<Typography variant='body1'>${product.price}</Typography>
+											<Typography variant='body1'>
+												{product.quantity} X ${product.price}
+											</Typography>
+										</Box>
+										<Box>
+											<TextField
+												size='small'
+												label='quantity'
+												type='number'
+												InputLabelProps={{
+													shrink: true,
+												}}
+												sx={{ width: '80px' }}
+												value={product.quantity}
+												onChange={(e) => {
+													const newCart = [...cart]
+													const index = newCart.findIndex(
+														(item) => item.id === product.id
+													)
+													newCart[index].quantity = e.target.value
+													setCart(newCart)
+												}}
+											/>
 										</Box>
 										<Box sx={{ position: 'relative' }}>
 											<Button
