@@ -208,9 +208,16 @@ const ShowProduct = () => {
 									<Button
 										variant='contained'
 										onClick={() => {
-											setCart([...cart, product])
-											setIsAdded(true)
-											console.log(cart)
+											const cartProduct = cart.find(
+												(item) => item.id === product.id
+											)
+
+											if (!cart.includes(cartProduct)) {
+												setCart([...cart, product])
+												setIsAdded(true)
+											} else {
+												alert('This product is already in your cart')
+											}
 										}}
 									>
 										Add to Cart
