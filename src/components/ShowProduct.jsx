@@ -15,7 +15,7 @@ import { useState } from 'react'
 const ShowProduct = () => {
 	const [like, setLike] = useState(false)
 	const [isAdded, setIsAdded] = useState(false)
-	const [{ cart, setCart }] = useOutletContext()
+	const { cart, setCart } = useOutletContext()
 	const handleLike = () => {
 		setLike(!like)
 	}

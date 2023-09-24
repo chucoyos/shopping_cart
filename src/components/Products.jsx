@@ -4,7 +4,7 @@ import Container from '@mui/material/Container'
 import Product from './Product'
 import Loading from './Loading'
 const Products = () => {
-	const [{ url }] = useOutletContext()
+	const { url } = useOutletContext()
 	const { data, loading, error } = useFetch(url)
 	// data && console.log(data)
 	// loading && console.log('loading...')

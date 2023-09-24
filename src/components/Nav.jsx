@@ -64,7 +64,7 @@ export default function Nav() {
 					</Typography>
 				</Tooltip>
 				<Badge
-					badgeContent={context.cart.length}
+					badgeContent={cart.length}
 					color='primary'
 				>
 					<Link
@@ -173,7 +173,7 @@ export default function Nav() {
 				</MenuItem>
 				<MenuItem onClick={handleClose}>Close</MenuItem>
 			</Menu>
-			<Outlet context={[context]} />
+			<Outlet context={context} />
 		</>
 	)
 }

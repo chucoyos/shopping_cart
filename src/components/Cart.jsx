@@ -8,7 +8,7 @@ import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined'
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium'
 import EmptyCart from './EmptyCart'
 const Cart = () => {
-	const [{ cart, setCart }] = useOutletContext()
+	const { cart, setCart } = useOutletContext()
 	const total = cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0)
 	return (
 		<Container
