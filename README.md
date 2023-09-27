@@ -1,8 +1,21 @@
-# React + Vite
+# Shopping cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is a shopping cart application that allows users to add items to their cart and checkout.
+The application fetches data from the [Fake Store API](https://fakestoreapi.com/) and is tested using React Testing Library and Vitest.
+The application is hosted on [Vercel](https://vercel.com/). and can be accessed [here](https://shopping-cart-gamma-cyan.vercel.app/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Packages
+
+- React
+- Vite
+- Material UI
+- React Router
+- Axios
+- Vitest
+- React Testing Library
+
+## API
+
+- [Fake Store API](https://fakestoreapi.com/)
