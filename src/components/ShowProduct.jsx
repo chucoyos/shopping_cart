@@ -201,7 +201,7 @@ const ShowProduct = () => {
 											color: 'inherit',
 										}}
 									>
-										Continue shopping
+										CONTINUE SHOPPING
 									</Link>
 								</Button>
 								{!isAdded ? (
@@ -221,7 +221,7 @@ const ShowProduct = () => {
 											}
 										}}
 									>
-										Add to Cart
+										ADD TO CART
 									</Button>
 								) : (
 									<Button
@@ -236,7 +236,7 @@ const ShowProduct = () => {
 												color: 'inherit',
 											}}
 										>
-											View Cart
+											VIEW CART
 										</Link>
 									</Button>
 								)}

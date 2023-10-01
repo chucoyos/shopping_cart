@@ -159,7 +159,7 @@ const Cart = () => {
 									to='/checkout'
 									style={{ textDecoration: 'none', color: 'inherit' }}
 								>
-									Proceed to checkout
+									PROCEED TO CHECKOUT
 								</Link>
 							</Button>
 							<Button variant='outlined'>

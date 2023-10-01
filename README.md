@@ -15,6 +15,14 @@ The application is hosted on [Vercel](https://vercel.com/). and can be accessed 
 - Axios
 - Vitest
 - React Testing Library
+- Cypress
+
+## Runt test suite
+
+```bash
+npm run test
+npx cypress open
+```
 
 ## API
 
